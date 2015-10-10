@@ -22,6 +22,10 @@
     if (self) {
         // Custom initialization
         self.hidesBottomBarWhenPushed=YES;
+        
+        
+    
+        
     }
     return self;
 }
