@@ -50,6 +50,7 @@
     //当前系统版本
     self.versionInt = 1;
     
+    
     self.splashView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.window.frame.size.width, self.window.frame.size.height)];
     NSString *iphone = [DeviceSelect getDeviceId];
     if ([[DeviceSelect netReachability] isReachable] == YES) {//判断是否有网
