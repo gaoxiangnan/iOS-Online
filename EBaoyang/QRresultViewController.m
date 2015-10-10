@@ -24,9 +24,7 @@
         self.hidesBottomBarWhenPushed=YES;
         
         
-        
-        
-        
+    
         
     }
     return self;
