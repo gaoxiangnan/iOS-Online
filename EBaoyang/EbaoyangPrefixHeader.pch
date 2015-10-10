@@ -1,0 +1,17 @@
+//
+//  EbaoyangPrefixHeader.pch
+//  EBaoyang
+//
+//  Created by ebaoyang on 15/10/10.
+//  Copyright (c) 2015年 ebaoyang. All rights reserved.
+//
+
+#ifndef EBaoyang_EbaoyangPrefixHeader_pch
+#define EBaoyang_EbaoyangPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define INTERURL @"http://123.57.6.119:6779/"
+
+#endif
