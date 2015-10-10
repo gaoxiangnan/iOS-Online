@@ -24,6 +24,11 @@ typedef void (^checkUpdateBlock)();
 
 @property (assign, nonatomic) int versionInt;
 
+
+
+
+
+
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UIImageView *splashView;
 @property (strong, nonatomic) UITabBarController *tabBarController;
