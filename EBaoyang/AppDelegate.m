@@ -47,6 +47,11 @@
     self.receiveData = [[NSMutableData alloc]init];
     [WXApi registerApp:@"wx9b6e764c557cec0b"];
     
+    
+    if (1) {
+    
+    }
+    
     //当前系统版本
     self.versionInt = 1;
     

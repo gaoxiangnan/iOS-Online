@@ -13,8 +13,8 @@
 #import "YangcheViewController.h"
 #import "WalletViewController.h"
 #import "DeviceSelect.h"
-
 #import "WXApi.h"
+
 
 typedef void (^checkUpdateBlock)();
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate,WXApiDelegate>
