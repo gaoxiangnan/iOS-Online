@@ -113,10 +113,7 @@
     self.webView.scrollView.bounces = NO;    // Do any additional setup after loading the view.
     
     
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-    button.backgroundColor = [UIColor blackColor];
-    [button addTarget:self action:@selector(asdf) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+
     
 }
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
