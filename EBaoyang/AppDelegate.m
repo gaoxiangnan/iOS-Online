@@ -16,7 +16,7 @@
 #import "GXNAleartView.h"
 #import "MasterViewController.h"
 #import "Reachability.h"
-
+#import "APService.h"
 @class WXApi;
 
 @interface AppDelegate ()<UITabBarControllerDelegate,UIAlertViewDelegate,MasterViewControllerDelegate,WalletViewControllerDelegate,HomeViewControllerDelegate,NSURLConnectionDelegate>
@@ -100,8 +100,137 @@
     
     
     [self.window makeKeyAndVisible];
+#pragma mark -------------极光推送--------------------
+    // Required
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_1
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        //可以添加自定义categories
+        [APService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
+                                                       UIUserNotificationTypeSound |
+                                                       UIUserNotificationTypeAlert)
+                                           categories:nil];
+    } else {
+        //categories 必须为nil
+        [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                       UIRemoteNotificationTypeSound |
+                                                       UIRemoteNotificationTypeAlert)
+                                           categories:nil];
+        
+        
+        
+    }
+#else
+    //categories 必须为nil
+    [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                   UIRemoteNotificationTypeSound |
+                                                   UIRemoteNotificationTypeAlert)
+                                       categories:nil];
+    
+#endif
+    // Required
+    [APService setupWithOption:launchOptions];
+#pragma mark -- 自定义推送 设置
+    NSNotificationCenter * jiguangDefaultCenter = [NSNotificationCenter defaultCenter];
+    //收到消息
+    [jiguangDefaultCenter addObserver:self
+                             selector:@selector(networkDidReceiveMessage:)
+                                 name:kJPFNetworkDidReceiveMessageNotification
+                               object:nil];
+    
+    //    [APService registrationID]
+    
+    
+    
+    //登录成功
+    //        kJPFNetworkDidLoginNotification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(kJPFNetworkDidLoginNotificationAction) name:kJPFNetworkDidLoginNotification object:nil];
+    
+    
+    
+    
+    
+    
+    
+#pragma mark -------------极光推送END--------------------
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     return YES;
 }
+-(void)kJPFNetworkDidLoginNotificationAction
+{
+    [APService setAlias:@"123" callbackSelector:nil object:nil];
+    
+}
+
+-(void)hah
+{}
+
+#pragma mark ----------极光推送的代理和系统的回调----------------
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    // Required
+    [APService registerDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    // Required
+    [APService handleRemoteNotification:userInfo];
+}
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    
+    if (application.applicationState  == UIApplicationStateActive) {
+#pragma 前端 接收到推送的时候
+        
+        [APService handleRemoteNotification:userInfo];
+        completionHandler(UIBackgroundFetchResultNewData);
+        
+    }
+    
+    else if (application.applicationState  ==  UIApplicationStateInactive)
+    {
+#pragma  后台
+        
+    }
+    
+    
+    
+    
+    
+    
+}
+
+
+#pragma mark ----------极光推送的代理和系统的回调END----------------
+
+
+
+#pragma mark 自定义消息
+//前端 收到 消息  后台回到前端
+- (void)networkDidReceiveMessage:(NSNotification *)notification {
+    
+    //    自定义
+    
+    
+    
+    
+    
+}
+
 
 - (void)showWord
 {

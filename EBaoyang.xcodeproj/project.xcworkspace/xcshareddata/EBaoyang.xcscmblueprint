@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "884A2F6837026ED978E9FF6FFE3C9B37D29A759F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "884A2F6837026ED978E9FF6FFE3C9B37D29A759F" : 0,
+    "DCA35A8C3CE0C49140F4B70C2EDC67AC99CB3502" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "40A8C3D0-EAA6-4D73-BA59-2640BE64C394",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "884A2F6837026ED978E9FF6FFE3C9B37D29A759F" : "EBYAppStore\/",
+    "DCA35A8C3CE0C49140F4B70C2EDC67AC99CB3502" : "eby-wallet-ios"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "EBaoyang",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "EBaoyang.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gaoxiangnan\/iOS-Online.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "884A2F6837026ED978E9FF6FFE3C9B37D29A759F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ebaoyang\/eby-wallet-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DCA35A8C3CE0C49140F4B70C2EDC67AC99CB3502"
+    }
+  ]
+}
