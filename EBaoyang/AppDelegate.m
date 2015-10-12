@@ -17,6 +17,7 @@
 #import "MasterViewController.h"
 #import "Reachability.h"
 #import "APService.h"
+#import "MobClick.h"
 @class WXApi;
 
 @interface AppDelegate ()<UITabBarControllerDelegate,UIAlertViewDelegate,MasterViewControllerDelegate,WalletViewControllerDelegate,HomeViewControllerDelegate,NSURLConnectionDelegate>
@@ -154,7 +155,16 @@
 #pragma mark -------------极光推送END--------------------
     
     
+#pragma mark -------------友盟统计--------------------
     
+    
+    [MobClick startWithAppkey:@"561b5df067e58ef94a000d03" reportPolicy:BATCH  channelId:@"APPStore"];
+    
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"ceshi7.27"];
+    [MobClick setAppVersion:version];
+    [MobClick setEncryptEnabled:NO];
+#pragma mark -------------友盟统计END--------------------
+
     
     
     
@@ -169,7 +179,10 @@
 }
 -(void)kJPFNetworkDidLoginNotificationAction
 {
-    [APService setAlias:@"123" callbackSelector:nil object:nil];
+    
+    NSLog(@"%@",[APService registrationID]);
+    
+//    [APService setAlias:@"123" callbackSelector:nil object:nil];
     
 }
 
@@ -230,6 +243,7 @@
     
     
 }
+
 
 
 - (void)showWord
@@ -497,6 +511,9 @@
     }
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
+#pragma mark ----------------------------- 前台进入后台
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [APService setBadge:0];
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
@@ -506,7 +523,15 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
+
+
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    
+    
+    
+    
+
+    
     [self checkUpDate];
     if (_myBlock) {
         _myBlock();

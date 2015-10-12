@@ -35,6 +35,10 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.receiveData = [[NSMutableData alloc]init];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -42,6 +46,12 @@
         [self checkUpDate];
     
     };
+    
+    
+    
+    NSLog(@"%@",[FCUUID uuidForDevice]);
+    
+    
     
     UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, -20, self.view.bounds.size.width, 40)];
     bgView.backgroundColor = [DeviceSelect colorWithHexString:@"#393F4F"];
@@ -101,6 +111,12 @@
     }
     //After iOS 5
     self.webView.scrollView.bounces = NO;    // Do any additional setup after loading the view.
+    
+    
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    button.backgroundColor = [UIColor blackColor];
+    [button addTarget:self action:@selector(asdf) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     
 }
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType

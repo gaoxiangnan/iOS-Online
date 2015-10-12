@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DBFB46F1BCB996C00D91749 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DBFB46C1BCB996C00D91749 /* libMobClickLibrary.a */; settings = {ASSET_TAGS = (); }; };
+		3DBFB4711BCBB0B400D91749 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DBFB4701BCBB0B400D91749 /* Reveal.framework */; settings = {ASSET_TAGS = (); }; };
 		3DC4EFCF1BCB57630086FAD4 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC4EFCE1BCB57630086FAD4 /* PushConfig.plist */; settings = {ASSET_TAGS = (); }; };
 		3DC4EFD31BCB57760086FAD4 /* libPushSDK-1.8.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC4EFD21BCB57760086FAD4 /* libPushSDK-1.8.5.a */; settings = {ASSET_TAGS = (); }; };
 		3DC4EFD51BCB579A0086FAD4 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC4EFD41BCB579A0086FAD4 /* CoreFoundation.framework */; };
@@ -136,6 +138,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DBFB46C1BCB996C00D91749 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		3DBFB46D1BCB996C00D91749 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		3DBFB46E1BCB996C00D91749 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
+		3DBFB4701BCBB0B400D91749 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		3DC4EFCE1BCB57630086FAD4 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
 		3DC4EFD11BCB57760086FAD4 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
 		3DC4EFD21BCB57760086FAD4 /* libPushSDK-1.8.5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPushSDK-1.8.5.a"; sourceTree = "<group>"; };
@@ -303,7 +309,9 @@
 				D1B53A2F1BA16EF900274988 /* libWeChatSDK.a in Frameworks */,
 				3DC4EFD31BCB57760086FAD4 /* libPushSDK-1.8.5.a in Frameworks */,
 				D11619FB1B9BF5AB00BB3264 /* libz.dylib in Frameworks */,
+				3DBFB46F1BCB996C00D91749 /* libMobClickLibrary.a in Frameworks */,
 				D11619F91B9BF59500BB3264 /* SystemConfiguration.framework in Frameworks */,
+				3DBFB4711BCBB0B400D91749 /* Reveal.framework in Frameworks */,
 				D11619DE1B96A78500BB3264 /* AVFoundation.framework in Frameworks */,
 				D120AB1F1B58EAC0004D917A /* Security.framework in Frameworks */,
 				D10435C41B562E8C0097264F /* MobileCoreServices.framework in Frameworks */,
@@ -321,6 +329,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DBFB46A1BCB995D00D91749 /* 友盟统计 */ = {
+			isa = PBXGroup;
+			children = (
+				3DBFB46B1BCB996C00D91749 /* UMAnalytics_Sdk_3.6.4 */,
+			);
+			name = "友盟统计";
+			sourceTree = "<group>";
+		};
+		3DBFB46B1BCB996C00D91749 /* UMAnalytics_Sdk_3.6.4 */ = {
+			isa = PBXGroup;
+			children = (
+				3DBFB46C1BCB996C00D91749 /* libMobClickLibrary.a */,
+				3DBFB46D1BCB996C00D91749 /* MobClick.h */,
+				3DBFB46E1BCB996C00D91749 /* MobClickSocialAnalytics.h */,
+			);
+			path = UMAnalytics_Sdk_3.6.4;
+			sourceTree = "<group>";
+		};
 		3DC4EFCD1BCB57440086FAD4 /* Apns */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +372,7 @@
 		D104356E1B54E4F00097264F = {
 			isa = PBXGroup;
 			children = (
+				3DBFB4701BCBB0B400D91749 /* Reveal.framework */,
 				D11619FE1B9BF5D900BB3264 /* libc++.dylib */,
 				D11619FC1B9BF5C700BB3264 /* libsqlite3.0.dylib */,
 				D11619FA1B9BF5AB00BB3264 /* libz.dylib */,
@@ -373,6 +400,7 @@
 		D10435791B54E4F00097264F /* EBaoyang */ = {
 			isa = PBXGroup;
 			children = (
+				3DBFB46A1BCB995D00D91749 /* 友盟统计 */,
 				3DC4EFCD1BCB57440086FAD4 /* Apns */,
 				D1B53A211BA13AFB00274988 /* HUD */,
 				D114C7861B9F00F1003A251D /* QRView */,
@@ -896,6 +924,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiangnan Gao (LM62MGR5SG)";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EBaoyang/EbaoyangPrefixHeader.pch";
 				INFOPLIST_FILE = EBaoyang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -904,6 +936,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/EBaoyang",
 					"$(PROJECT_DIR)/EBaoyang/lib",
+					"$(PROJECT_DIR)/EBaoyang/UMAnalytics_Sdk_3.6.4",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -920,6 +953,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiangnan Gao (LM62MGR5SG)";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EBaoyang/EbaoyangPrefixHeader.pch";
 				INFOPLIST_FILE = EBaoyang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -928,6 +965,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/EBaoyang",
 					"$(PROJECT_DIR)/EBaoyang/lib",
+					"$(PROJECT_DIR)/EBaoyang/UMAnalytics_Sdk_3.6.4",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
